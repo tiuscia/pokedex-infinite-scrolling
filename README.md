@@ -25,8 +25,8 @@ npm run dev
     ├── layout/
     ├── pages/
     │   │   
-    │   ├── HomeScreen/ # homepage /
-    │   └── PokemonScreen/ # pokemonpage /pokemon/{id}
+    │   ├── HomeScreen/ # homepage path:/
+    │   └── PokemonScreen/ # pokemonpage path:/pokemon/{id}
     │ 
     ├── types/   
     ├── utils/         
@@ -35,8 +35,6 @@ npm run dev
 
 ## React + TypeScript + Vite
 
-This template has been used
-
-Currently, two official plugins are available:
+This is the template that has been used with the following plugins:
 
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
