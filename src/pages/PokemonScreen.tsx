@@ -15,8 +15,6 @@ const PokemonScreen: React.FC = () => {
     const {infoData, speciesData } = location.state
     const navigate = useNavigate();
 
-    console.log("PokemonScreen render => pokemonData", infoData, speciesData) 
-
     window.scrollTo(0, 0);
 
     return (

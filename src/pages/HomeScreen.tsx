@@ -2,8 +2,7 @@ import DefaultLayout from "../layout/DefaultLayout";
 import PokemonList from "../components/list/List";
 
 const HomeScreen: React.FC = () => {
-
-
+    
     return (
       <DefaultLayout>
         <header className="p-5 space-y-3 max-w-screen-sm mx-auto mb-5 md:p-7 md:max-w-screen-md md:space-y-5 md:mb-7 lg:p-8 lg:max-w-screen-lg lg:space-y-8 lg:md:mb-10">

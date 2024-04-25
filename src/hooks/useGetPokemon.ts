@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
+import { GlobalContext } from "../context/GlobalContext";
 import { getPokemon, DEFAULT_QUERY, getPokemonFullData } from "../api/pokemonApi";
 import {PokemonFullDataType} from "../types";
 
@@ -9,7 +10,23 @@ const useGetPokemon = (query = DEFAULT_QUERY) => {
   const [isLoading, setIsLoading] = useState(false);
   const [allPokemon, setAllPokemon] = useState<PokemonFullDataType[]>([]);
 
+
+  const { pokemonList, setPokemonList, scrollPosition} = useContext(GlobalContext);
+
   useEffect(() => {
+    if (allPokemon.length === 0 && pokemonList.length > 0) {
+      // if it's the first time loading and we have data in the context, use it
+      setAllPokemon(pokemonList);
+      setHasMoreResults(true);
+
+      // TODO: FIX THIS - DO NOT USE TIMEOUT
+      setTimeout(() => {
+        if(scrollPosition) window.scrollTo(0, scrollPosition);
+      }, 1000);
+
+      return;
+    }
+
     // reset on loading
     setIsLoading(true);
     setError(null);
@@ -26,6 +43,9 @@ const useGetPokemon = (query = DEFAULT_QUERY) => {
         setAllPokemon(prev => [...prev, ...pokemonFullData]);
         setHasMoreResults(response.data.next ? true : false);
         setIsLoading(false); 
+
+        // update context
+        setPokemonList([...pokemonList, ...pokemonFullData])
 
       } catch (error) {
         setIsLoading(false); 
