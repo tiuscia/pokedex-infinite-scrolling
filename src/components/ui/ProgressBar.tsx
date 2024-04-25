@@ -18,7 +18,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ statsArr, color, animate  }) 
           <div  className="w-full h-7 bg-secondary rounded-full mt-2 mb-3 relative">
             <div 
               style={{ width: `${(stat.base_stat)}%`}} 
-              className="not-colored-bar h-full rounded-full relative"
+              className="colored-bar_wrapper h-full rounded-full relative max-w-full"
             >
               <div
                 className={`${BG_COLOR_CLASSES[color]} ${animate ? 'animate-progress' : ''} colored-bar h-full rounded-full relative`} 

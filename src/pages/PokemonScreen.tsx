@@ -20,15 +20,16 @@ const PokemonScreen: React.FC = () => {
     return (
       <DefaultLayout>
         <div className="absolute left-4 top-4 md:left-7 md:top-6 lg:left-8 lg:top-7 2xl:left-[15%]">
+          {/* I should have a talk with the designer to dicuss a better solution */}
           <Button 
             onClick={() => navigate('/')}
             bgColor={COLORS[speciesData?.color?.name as keyof typeof COLORS]}
-            iconType='arrowLeft'
+            iconType='arrowLeftPrimary'
             iconPosition={ICON_POSITION.left as keyof typeof ICON_POSITION}
           />
         </div>
         <header className={`${BG_GRADIENT_CLASSES[speciesData?.color?.name] || BG_GRADIENT_CLASSES['neutral'] } relative pt-14 flex flex-col justify-center items-center w-full mx-auto mb-5  md:mb-0 lg:pt-16 `} >
-            {/* TODO: navigate to next or previous pokemon page - move the data request in the pokemonScreen if location.state is empty  */}
+            {/* TODO: navigate to next or previous pokemon page - move the data request in the pokemonScreen if location.state is empty, or context if it has been used  */}
             {/* {infoData?.id > 1 && 
               <Button 
                 onClick={() => navigate(`/pokemon/${infoData?.id - 1}`)} 

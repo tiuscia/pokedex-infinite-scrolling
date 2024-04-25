@@ -1,4 +1,6 @@
 import { BgColorClassesType } from "../types"
+import arrowLeftPrimary from '../assets/arrow-left-primary.svg';
+import arrowRightPrimary from '../assets/arrow-right-primary.svg';
 import arrowLeft from '../assets/arrow-left.svg';
 import arrowRight from '../assets/arrow-right.svg';
 import caretLeft from '../assets/caret-left.svg';
@@ -83,6 +85,8 @@ export const TABS_LABEL = {
 export const ICONS_FILE = {
     arrowLeft: arrowLeft,
     arrowRight: arrowRight,
+    arrowLeftPrimary: arrowLeftPrimary,
+    arrowRightPrimary: arrowRightPrimary,
     caretRight: caretRight,
     caretLeft: caretLeft,
 }

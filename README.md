@@ -1,5 +1,6 @@
 # Pokedex project
 
+design inspiration from Dribble https://dribbble.com/shots/16833947-Mobile-Pokedex-App-Design-Exploration/attachments/11892526?mode=media
 
 ## how to run the project
 

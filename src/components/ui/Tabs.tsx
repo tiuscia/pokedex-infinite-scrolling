@@ -30,6 +30,13 @@ const Tabs: React.FC<TabsProps> = ({infoData, color}) => {
         </div>
         <div className={`${activeTab == 0 ? 'block' : 'hidden'} max-w-screen-lg mt-8 mx-auto`}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
+          <div>
+              <h2 className="text-body-lg font-semibold">General info</h2>
+              <ul className="text-body-lg">
+                <li>Weight: {`${infoData?.weight / 10}`} kg</li>
+                <li>Height: {infoData?.height} dm</li>
+              </ul>
+            </div>
             <div>
               <h2 className="text-body-lg font-semibold">Abilities</h2>
               <ul className="text-body-lg">
@@ -49,8 +56,7 @@ const Tabs: React.FC<TabsProps> = ({infoData, color}) => {
           </div>
         </div>
         <div className={`${activeTab == 1 ? 'block' : 'hidden'} max-w-screen-lg mt-8 mx-auto flex flex-col`}>
-          {/* TODO: implement stats component */}
-            {infoData?.stats && <ProgressBar statsArr={infoData.stats} color={color} animate={activeTab == 1}/>}
+          {infoData?.stats && <ProgressBar statsArr={infoData.stats} color={color} animate={activeTab == 1}/>}
         </div>
       </div>
     

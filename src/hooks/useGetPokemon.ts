@@ -10,21 +10,31 @@ const useGetPokemon = (query = DEFAULT_QUERY) => {
   const [isLoading, setIsLoading] = useState(false);
   const [allPokemon, setAllPokemon] = useState<PokemonFullDataType[]>([]);
 
+  const context = useContext(GlobalContext);
 
-  const { pokemonList, setPokemonList, scrollPosition} = useContext(GlobalContext);
+  if (!context) {
+    throw new Error('useGetPokemon must be used within a GlobalContext.Provider');
+  }
+
+  const { pokemonList, setPokemonList, scrollPosition } = context;
 
   useEffect(() => {
     if (allPokemon.length === 0 && pokemonList.length > 0) {
-      // if it's the first time loading and we have data in the context, use it
+      // if it's the first time loading and we have data in the context, use it 
       setAllPokemon(pokemonList);
       setHasMoreResults(true);
 
-      // TODO: FIX THIS - DO NOT USE TIMEOUT
-      setTimeout(() => {
+      // TODO: improve performance
+      // Create a MutationObserver instance to watch for changes in the DOM, cause useLayoutEffect is not a solution
+      const observer = new MutationObserver(() => {
         if(scrollPosition) window.scrollTo(0, scrollPosition);
-      }, 1000);
+      });
 
-      return;
+      // Start observing the document with the configured parameters
+      observer.observe(document, { childList: true, subtree: true });
+
+      // Stop useEffect execution and clean up the observer when the component unmounts
+      return () => observer.disconnect();
     }
 
     // reset on loading
@@ -53,7 +63,6 @@ const useGetPokemon = (query = DEFAULT_QUERY) => {
         // if request is aborted, do not set error and ignore it
         if (signal.aborted) return;
         setError(error as Error);
-
       }
     };
 

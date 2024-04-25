@@ -48,6 +48,11 @@ export default {
           letterSpacing: '-0.015em',
           fontWeight: 700
         }],
+        'subheading-xs': ['.9rem', {
+          lineHeight: '1.2rem',
+          letterSpacing: '0',
+          fontWeight: 600
+        }],
         'subheading-sm': ['1.2rem', {
           lineHeight: '1.6rem',
           letterSpacing: '0',

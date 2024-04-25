@@ -127,7 +127,7 @@ h1 {
 }
 
 h2 {
-  @apply text-subheading-sm md:text-subheading-md lg:text-subheading-lg;
+  @apply text-subheading-xs sm:text-subheading-sm md:text-subheading-md lg:text-subheading-lg;
 }
 
 p, span {
