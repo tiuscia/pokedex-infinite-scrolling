@@ -53,12 +53,17 @@ const PokemonList: React.FC = () => {
 
   return (
     <>
-      {/* TODO: load previous data - this will fetch only the last # items seen, when the user returns from a pokemon page  */}
+      {/* 
+          TODO: load previous data + improve performance with big data - when the user returns from a pokemon page 
+          fetch only the last # items seen (ie. if ?limit=20&offset=200" get only last 20) and detect scroll up/down 
+          to load more data 
+      */}
       {error && <p>Error fetching data: {error.message}</p>}
       {allPokemon.length > 0 && (
         <ul 
           className="py-5 px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-screen-sm mx-auto sm:gap-8 md:p-7 md:max-w-screen-md lg:p-8 lg:max-w-screen-lg"
         >
+          {/* TODO: move cards to /components */}
           {allPokemon.map((pokemon, i) => (
             <Link 
             to={{
