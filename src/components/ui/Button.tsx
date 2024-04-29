@@ -1,13 +1,13 @@
-import { COLORS, ICONS_FILE, ICON_POSITION } from "../../constants";
-import { getIcon } from "../../ultils";
+import { COLORS, ICONS_FILE, ICON_POSITION } from "../../constants"
+import { getIcon } from "../../ultils"
 
 interface ButtonProps {
   onClick: () => void;
   label?: string;
   bgColor?: string;
   disabled?: boolean;
-  iconType?: keyof typeof ICONS_FILE  | '';
-  iconPosition?: keyof typeof ICON_POSITION | '';
+  iconType?: keyof typeof ICONS_FILE  | ''
+  iconPosition?: keyof typeof ICON_POSITION | ''
   style?: React.CSSProperties;
 }
 
@@ -26,4 +26,4 @@ const Button: React.FC<ButtonProps> = ({ onClick, label, bgColor = COLORS.second
   );
 };
 
-export default Button;
+export default Button

@@ -1,5 +1,5 @@
-import DefaultLayout from "../layout/DefaultLayout";
-import PokemonList from "../components/list/List";
+import DefaultLayout from "../layout/DefaultLayout"
+import PokemonList from "../components/list/List"
 
 const HomeScreen: React.FC = () => {
     
@@ -13,7 +13,8 @@ const HomeScreen: React.FC = () => {
           <PokemonList />
         </main>
       </DefaultLayout>
-    );
+    )
   }
   
-  export default HomeScreen;
+  export default HomeScreen
+  

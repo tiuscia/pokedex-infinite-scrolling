@@ -27,4 +27,3 @@ export const getPokemonFullData = async (fetchedPokemonData: fatchedPokemonDataT
     throw new Error('Failed to fetch Pokemon data');
   }
 }
-

@@ -1,6 +1,6 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomeScreen from './pages/HomeScreen';
-import PokemonScreen from './pages/PokemonScreen';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomeScreen from './pages/HomeScreen'
+import PokemonScreen from './pages/PokemonScreen'
 
 function App() {
 

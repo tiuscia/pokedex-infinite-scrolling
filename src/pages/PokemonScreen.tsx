@@ -1,21 +1,21 @@
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom'
 
-import DefaultLayout from "../layout/DefaultLayout";
-import CurveBg from "../components/ui/CurveBg";
-import Button from "../components/ui/Button";
-import Tabs from "../components/ui/Tabs";
+import DefaultLayout from "../layout/DefaultLayout"
+import CurveBg from "../components/ui/CurveBg"
+import Button from "../components/ui/Button"
+import Tabs from "../components/ui/Tabs"
 
-import { BG_GRADIENT_CLASSES, COLORS, ICON_POSITION } from "../constants/index";
-import { createPokemonDescription, createId } from "../ultils";
+import { BG_GRADIENT_CLASSES, COLORS, ICON_POSITION } from "../constants/index"
+import { createPokemonDescription, createId } from "../ultils"
 
 
 const PokemonScreen: React.FC = () => {
-    const { id } = useParams();
+    const { id } = useParams()
     const location = useLocation()
     const {infoData, speciesData } = location.state
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
 
     return (
       <DefaultLayout>
@@ -57,7 +57,8 @@ const PokemonScreen: React.FC = () => {
           <Tabs infoData={infoData} color={speciesData.color.name}/>
         </main>
       </DefaultLayout>
-    );
+    )
   }
   
-  export default PokemonScreen;
+  export default PokemonScreen
+  

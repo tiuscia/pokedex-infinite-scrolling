@@ -97,4 +97,4 @@ export const ICON_POSITION = {
 }
 
 // TODO: get this info from the api
-export const ALL_POKEMON_COUNT = 1302;
+export const ALL_POKEMON_COUNT = 1302

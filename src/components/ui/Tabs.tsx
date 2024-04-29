@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import ProgressBar from './ProgressBar';
+import ProgressBar from './ProgressBar'
 
-import { removeDash } from '../../ultils';
-import { TABS_LABEL, COLORS } from '../../constants';
-import { PokemonInfoDataInterface } from '../../types';
+import { removeDash } from '../../ultils'
+import { TABS_LABEL, COLORS } from '../../constants'
+import { PokemonInfoDataInterface } from '../../types'
 
 
 interface TabsProps {
-  infoData: PokemonInfoDataInterface;
-  color: keyof typeof COLORS;
+  infoData: PokemonInfoDataInterface
+  color: keyof typeof COLORS
 }
 
 // TODO: make this component reusable + optimize content tab

@@ -1,12 +1,12 @@
-import { COLORS, BG_COLOR_CLASSES } from "../../constants";
-import { StatsInterface } from "../../types";
-import { removeDash, capitalize } from "../../ultils";
+import { COLORS, BG_COLOR_CLASSES } from "../../constants"
+import { StatsInterface } from "../../types"
+import { removeDash, capitalize } from "../../ultils"
 
 interface ProgressBarProps {
   // TODO: add a max value for the progress bar, if applicable
-  statsArr: StatsInterface[];
-  color: keyof typeof COLORS;
-  animate?: boolean;
+  statsArr: StatsInterface[]
+  color: keyof typeof COLORS
+  animate?: boolean
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ statsArr, color, animate  }) => {
@@ -33,4 +33,4 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ statsArr, color, animate  }) 
   );
 };
 
-export default ProgressBar;
+export default ProgressBar

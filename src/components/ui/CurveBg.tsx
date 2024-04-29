@@ -1,4 +1,4 @@
-import { COLORS } from "../../constants";
+import { COLORS } from "../../constants"
 
 type CurvedBgProps = {
   color?: string; 
@@ -15,4 +15,4 @@ const CurvedBg: React.FC<CurvedBgProps> = ({ color }) => {
 	);
 };
 
-export default CurvedBg;
+export default CurvedBg
